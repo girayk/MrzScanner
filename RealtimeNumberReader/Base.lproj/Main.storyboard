@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14750" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14710.3"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Vision View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="VisionViewController" customModule="RealtimeNumberReader" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dCx-30-dWq" customClass="PreviewView" customModule="RealtimeNumberReader" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" cocoaTouchSystemColor="systemBlueColor"/>
+                            </view>
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4LZ-uG-TOw" userLabel="Cutout View">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="KGw-xA-kxA" appends="YES" id="aNf-kt-GPt"/>
+                                </connections>
+                            </view>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lCN-B8-Glk">
+                                <rect key="frame" x="116.5" y="430.5" width="181" height="35"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="0001112222">
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="30" name="Menlo-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="4LZ-uG-TOw" secondAttribute="trailing" id="34r-xM-zkS"/>
+                            <constraint firstAttribute="bottom" secondItem="dCx-30-dWq" secondAttribute="bottom" id="AY4-8i-CYa"/>
+                            <constraint firstItem="dCx-30-dWq" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Hnz-aJ-uAm"/>
+                            <constraint firstItem="dCx-30-dWq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YR5-lB-gXO"/>
+                            <constraint firstAttribute="trailing" secondItem="dCx-30-dWq" secondAttribute="trailing" id="cZC-nJ-9CE"/>
+                            <constraint firstItem="4LZ-uG-TOw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="en1-rS-BZm"/>
+                            <constraint firstAttribute="bottom" secondItem="4LZ-uG-TOw" secondAttribute="bottom" id="nGI-eX-p4U"/>
+                            <constraint firstItem="lCN-B8-Glk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" placeholder="YES" id="qSE-0e-Bvk"/>
+                            <constraint firstItem="lCN-B8-Glk" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" placeholder="YES" id="rwB-hc-dcB"/>
+                            <constraint firstItem="4LZ-uG-TOw" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="zr2-bi-Zte"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="cutoutView" destination="4LZ-uG-TOw" id="0SU-Bz-ue8"/>
+                        <outlet property="numberView" destination="lCN-B8-Glk" id="Ndj-XM-BSV"/>
+                        <outlet property="previewView" destination="dCx-30-dWq" id="2Ow-bh-HUR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="KGw-xA-kxA">
+                    <connections>
+                        <action selector="handleTap:" destination="BYZ-38-t0r" id="XFG-5b-z6W"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="47.826086956521742" y="20.758928571428569"/>
+        </scene>
+    </scenes>
+</document>
