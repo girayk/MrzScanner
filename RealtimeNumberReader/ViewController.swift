@@ -21,10 +21,13 @@ class ViewController: UIViewController {
 	
 	// MARK: - Capture related objects
 	private let captureSession = AVCaptureSession()
+    let captureSessionQueue = DispatchQueue(label: "com.example.apple-samplecode.CaptureSessionQueue")
+    
 	var captureDevice: AVCaptureDevice?
+    
 	var videoDataOutput = AVCaptureVideoDataOutput()
-	let videoDataOutputQueue = DispatchQueue(label: "VideoDataOutputQueue")
-
+    let videoDataOutputQueue = DispatchQueue(label: "com.example.apple-samplecode.VideoDataOutputQueue")
+    
 	// MARK: - Region of interest (ROI) and text orientation
 	// Region of video data output buffer that recognition should be run on.
 	// Gets recalculated once the bounds of the preview layer are known.
@@ -58,14 +61,17 @@ class ViewController: UIViewController {
 		maskLayer.fillRule = .evenOdd
 		cutoutView.layer.mask = maskLayer
 		
-		// Start camera. This is a blocking call and could benefit from being
-		// dispatched onto another queue. However the bounds of the region of
-		// interest are not available until the preview layer is up, so just do
-		// it on the main queue.
-		setupCamera()
-		
-		// Figure out initial ROI.
-		calculateRegionOfInterest()
+        // Starting the capture session is a blocking call. Perform setup using
+        // a dedicated serial dispatch queue to prevent blocking the main thread.
+        captureSessionQueue.async {
+            self.setupCamera()
+            
+            // Calculate region of interest now that the camera is setup.
+            DispatchQueue.main.async {
+                // Figure out initial ROI.
+                self.calculateRegionOfInterest()
+            }
+        }
 	}
 	
 	override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -236,22 +242,24 @@ class ViewController: UIViewController {
 		// Found a definite number.
 		// Stop the camera synchronously to ensure that no further buffers are
 		// received. Then update the number view asynchronously.
-		DispatchQueue.main.sync {
+		captureSessionQueue.sync {
 			self.captureSession.stopRunning()
-		}
-		DispatchQueue.main.async {
-			self.numberView.text = string
-			self.numberView.isHidden = false
+            DispatchQueue.main.async {
+                self.numberView.text = string
+                self.numberView.isHidden = false
+            }
 		}
 	}
 	
 	@IBAction func handleTap(_ sender: UITapGestureRecognizer) {
-		DispatchQueue.main.async {
-			self.numberView.isHidden = true
-			if !self.captureSession.isRunning {
-				self.captureSession.startRunning()
-			}
-		}
+        captureSessionQueue.async {
+            if !self.captureSession.isRunning {
+                self.captureSession.startRunning()
+            }
+            DispatchQueue.main.async {
+                self.numberView.isHidden = true
+            }
+        }
 	}
 }
 
