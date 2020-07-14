@@ -29,8 +29,6 @@
 		46D1B27E226A6AAB00C6D4A7 /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
 		46E86923226A9FC300C025A2 /* StringUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
 		6CD523206CD56C4000000001 /* SampleCode.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
-		6CE784E06CE765A000000001 /* LICENSE.txt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
-		7990F677ACAF28F74F230BE9 /* Pods_Passport.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Passport.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +48,6 @@
 				46D1B26B226A6A9600C6D4A7 /* Passport */,
 				46D1B26A226A6A9600C6D4A7 /* Products */,
 				6CD56C806CD525D000000001 /* Configuration */,
-				6CE823B06CE7E51000000001 /* LICENSE */,
 				8884D33E3693AF7B64F5E303 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -87,18 +84,9 @@
 			name = Configuration;
 			sourceTree = "<group>";
 		};
-		6CE823B06CE7E51000000001 /* LICENSE */ = {
-			isa = PBXGroup;
-			children = (
-				6CE784E06CE765A000000001 /* LICENSE.txt */,
-			);
-			path = LICENSE;
-			sourceTree = "<group>";
-		};
 		8884D33E3693AF7B64F5E303 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7990F677ACAF28F74F230BE9 /* Pods_Passport.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -185,8 +173,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "
-";
+			shellScript = "\n";
 			showEnvVarsInLog = 0;
 		};
 		865D8055C3A8E9614C7C0A75 /* [CP] Check Pods Manifest.lock */ = {
@@ -206,8 +193,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "
-";
+			shellScript = "\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
