@@ -29,7 +29,6 @@ class VisionViewController: ViewController {
 	
 	// Vision recognition handler.
 	func recognizeTextHandler(request: VNRequest, error: Error?) {
-		var numbers = [String]()
 		var redBoxes = [CGRect]() // Shows all recognized text lines
 		var greenBoxes = [CGRect]() // Shows words that might be serials
 		
@@ -38,26 +37,17 @@ class VisionViewController: ViewController {
 		}
 		
 		let maximumCandidates = 1
-		
 		for visionResult in results {
-			guard let candidate = visionResult.topCandidates(maximumCandidates).first else { continue }
+            guard let candidate = visionResult.topCandidates(maximumCandidates).first else { continue }
 			
-			// Draw red boxes around any detected text, and green boxes around
-			// any detected phone numbers. The phone number may be a substring
-			// of the visionResult. If a substring, draw a green box around the
-			// number and a red box around the full string. If the number covers
-			// the full result only draw the green box.
 			var numberIsSubstring = true
-			
-			if let result = candidate.string.extractPhoneNumber() {
-				let (range, number) = result
-				// Number may not cover full visionResult. Extract bounding box
-				// of substring.
-				if let box = try? candidate.boundingBox(for: range)?.boundingBox {
-					numbers.append(number)
-					greenBoxes.append(box)
-					numberIsSubstring = !(range.lowerBound == candidate.string.startIndex && range.upperBound == candidate.string.endIndex)
-				}
+
+			if let result = candidate.string.checkMrz() {
+                if(result != "nil"){
+                    print(result)
+                    numberIsSubstring = false
+                    greenBoxes.append(visionResult.boundingBox)
+                }
 			}
 			if numberIsSubstring {
 				redBoxes.append(visionResult.boundingBox)
@@ -65,7 +55,6 @@ class VisionViewController: ViewController {
 		}
 		
 		// Log any found numbers.
-		numberTracker.logFrame(strings: numbers)
 		show(boxGroups: [(color: UIColor.red.cgColor, boxes: redBoxes), (color: UIColor.green.cgColor, boxes: greenBoxes)])
 		
 		// Check if we have any temporally stable numbers.
@@ -132,4 +121,5 @@ class VisionViewController: ViewController {
 			}
 		}
 	}
+
 }

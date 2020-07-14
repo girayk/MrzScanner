@@ -19,7 +19,7 @@
 
 /* Begin PBXFileReference section */
 		460A3F4F2280B7A900FDBE21 /* VisionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionViewController.swift; sourceTree = "<group>"; };
-		46D1B269226A6A9600C6D4A7 /* RealtimeNumberReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RealtimeNumberReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		46D1B269226A6A9600C6D4A7 /* Passport Reader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Passport Reader.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46D1B26C226A6A9600C6D4A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		46D1B26E226A6A9600C6D4A7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		46D1B271226A6A9600C6D4A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -28,9 +28,9 @@
 		46D1B278226A6A9800C6D4A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46D1B27E226A6AAB00C6D4A7 /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
 		46E86923226A9FC300C025A2 /* StringUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
-		6CD523206CD56C4000000001 /* SampleCode.xcconfig */ = {isa = PBXFileReference; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
-		6CE784E06CE765A000000001 /* LICENSE.txt */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE.txt; sourceTree = "<group>"; };
-		E0C0E240E0E1569000000001 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		6CD523206CD56C4000000001 /* SampleCode.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
+		6CE784E06CE765A000000001 /* LICENSE.txt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		7990F677ACAF28F74F230BE9 /* Pods_Passport.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Passport.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,23 +47,23 @@
 		46D1B260226A6A9600C6D4A7 = {
 			isa = PBXGroup;
 			children = (
-				E0C0E240E0E1569000000001 /* README.md */,
-				46D1B26B226A6A9600C6D4A7 /* RealtimeNumberReader */,
+				46D1B26B226A6A9600C6D4A7 /* Passport */,
 				46D1B26A226A6A9600C6D4A7 /* Products */,
 				6CD56C806CD525D000000001 /* Configuration */,
 				6CE823B06CE7E51000000001 /* LICENSE */,
+				8884D33E3693AF7B64F5E303 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		46D1B26A226A6A9600C6D4A7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				46D1B269226A6A9600C6D4A7 /* RealtimeNumberReader.app */,
+				46D1B269226A6A9600C6D4A7 /* Passport Reader.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		46D1B26B226A6A9600C6D4A7 /* RealtimeNumberReader */ = {
+		46D1B26B226A6A9600C6D4A7 /* Passport */ = {
 			isa = PBXGroup;
 			children = (
 				46D1B26C226A6A9600C6D4A7 /* AppDelegate.swift */,
@@ -76,7 +76,7 @@
 				46D1B275226A6A9800C6D4A7 /* LaunchScreen.storyboard */,
 				46D1B278226A6A9800C6D4A7 /* Info.plist */,
 			);
-			path = RealtimeNumberReader;
+			path = Passport;
 			sourceTree = "<group>";
 		};
 		6CD56C806CD525D000000001 /* Configuration */ = {
@@ -92,29 +92,37 @@
 			children = (
 				6CE784E06CE765A000000001 /* LICENSE.txt */,
 			);
-			name = LICENSE;
 			path = LICENSE;
+			sourceTree = "<group>";
+		};
+		8884D33E3693AF7B64F5E303 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7990F677ACAF28F74F230BE9 /* Pods_Passport.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		46D1B268226A6A9600C6D4A7 /* RealtimeNumberReader */ = {
+		46D1B268226A6A9600C6D4A7 /* Passport */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 46D1B27B226A6A9800C6D4A7 /* Build configuration list for PBXNativeTarget "RealtimeNumberReader" */;
+			buildConfigurationList = 46D1B27B226A6A9800C6D4A7 /* Build configuration list for PBXNativeTarget "Passport" */;
 			buildPhases = (
+				865D8055C3A8E9614C7C0A75 /* [CP] Check Pods Manifest.lock */,
 				46D1B265226A6A9600C6D4A7 /* Sources */,
 				46D1B266226A6A9600C6D4A7 /* Frameworks */,
 				46D1B267226A6A9600C6D4A7 /* Resources */,
-				1E92B9A01E90BEF000000001,
+				33349365FD9E089686D8AE99 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = RealtimeNumberReader;
+			name = Passport;
 			productName = RealtimeNumberReader;
-			productReference = 46D1B269226A6A9600C6D4A7 /* RealtimeNumberReader.app */;
+			productReference = 46D1B269226A6A9600C6D4A7 /* Passport Reader.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -123,7 +131,8 @@
 		46D1B261226A6A9600C6D4A7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1100;
+				DefaultBuildSystemTypeForWorkspace = Latest;
+				LastSwiftUpdateCheck = 1150;
 				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = Apple;
 				TargetAttributes = {
@@ -132,7 +141,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 46D1B264226A6A9600C6D4A7 /* Build configuration list for PBXProject "RealtimeNumberReader" */;
+			buildConfigurationList = 46D1B264226A6A9600C6D4A7 /* Build configuration list for PBXProject "Passport" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -145,7 +154,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				46D1B268226A6A9600C6D4A7 /* RealtimeNumberReader */,
+				46D1B268226A6A9600C6D4A7 /* Passport */,
 			);
 		};
 /* End PBXProject section */
@@ -162,6 +171,46 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		33349365FD9E089686D8AE99 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "
+";
+			showEnvVarsInLog = 0;
+		};
+		865D8055C3A8E9614C7C0A75 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Passport-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "
+";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		46D1B265226A6A9600C6D4A7 /* Sources */ = {
@@ -323,14 +372,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = RealtimeNumberReader/Info.plist;
+				DEVELOPMENT_TEAM = DZF99C8BFT;
+				INFOPLIST_FILE = "$(SRCROOT)/Passport/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.RealtimeNumberReader${SAMPLE_CODE_DISAMBIGUATOR}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Passport Reader";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
@@ -345,14 +394,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = RealtimeNumberReader/Info.plist;
+				DEVELOPMENT_TEAM = DZF99C8BFT;
+				INFOPLIST_FILE = "$(SRCROOT)/Passport/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.RealtimeNumberReader${SAMPLE_CODE_DISAMBIGUATOR}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Passport Reader";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
@@ -363,7 +412,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		46D1B264226A6A9600C6D4A7 /* Build configuration list for PBXProject "RealtimeNumberReader" */ = {
+		46D1B264226A6A9600C6D4A7 /* Build configuration list for PBXProject "Passport" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				46D1B279226A6A9800C6D4A7 /* Debug */,
@@ -372,7 +421,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		46D1B27B226A6A9800C6D4A7 /* Build configuration list for PBXNativeTarget "RealtimeNumberReader" */ = {
+		46D1B27B226A6A9800C6D4A7 /* Build configuration list for PBXNativeTarget "Passport" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				46D1B27C226A6A9800C6D4A7 /* Debug */,
