@@ -15,7 +15,7 @@ import Vision
 class VisionViewController: ViewController {
 	var request: VNRecognizeTextRequest!
 	// Temporal string tracker
-	let numberTracker = StringTracker()
+	let mrzTracker = StringTracker()
 	
 	override func viewDidLoad() {
 		// Set up vision request before letting ViewController set up the camera
@@ -31,7 +31,8 @@ class VisionViewController: ViewController {
 	func recognizeTextHandler(request: VNRequest, error: Error?) {
 		var redBoxes = [CGRect]() // Shows all recognized text lines
 		var greenBoxes = [CGRect]() // Shows words that might be serials
-		
+        var codes = [String]()
+
 		guard let results = request.results as? [VNRecognizedTextObservation] else {
 			return
 		}
@@ -44,23 +45,26 @@ class VisionViewController: ViewController {
 
 			if let result = candidate.string.checkMrz() {
                 if(result != "nil"){
-                    print(result)
+                    codes.append(result)
                     numberIsSubstring = false
+
                     greenBoxes.append(visionResult.boundingBox)
                 }
 			}
+
 			if numberIsSubstring {
 				redBoxes.append(visionResult.boundingBox)
 			}
 		}
 		
 		// Log any found numbers.
+        mrzTracker.logFrame(strings: codes)
 		show(boxGroups: [(color: UIColor.red.cgColor, boxes: redBoxes), (color: UIColor.green.cgColor, boxes: greenBoxes)])
 		
 		// Check if we have any temporally stable numbers.
-		if let sureNumber = numberTracker.getStableString() {
+		if let sureNumber = mrzTracker.getStableString() {
 			showString(string: sureNumber)
-			numberTracker.reset(string: sureNumber)
+			mrzTracker.reset(string: sureNumber)
 		}
 	}
 	

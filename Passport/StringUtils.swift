@@ -151,5 +151,10 @@ class StringTracker {
 		seenStrings.removeValue(forKey: string)
 		bestCount = 0
 		bestString = ""
+        captureFirst = ""
+        captureSecond = ""
+        captureThird = ""
+        mrz = ""
+        temp_mrz = ""
 	}
 }

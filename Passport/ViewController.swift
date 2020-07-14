@@ -147,6 +147,9 @@ class ViewController: UIViewController {
 		var numFrame = cutout
 		numFrame.origin.y += numFrame.size.height
 		numberView.frame = numFrame
+        numberView.numberOfLines = 3
+        numberView.font = numberView.font.withSize(9)
+
 	}
 	
 	func setupOrientationAndTransform() {
