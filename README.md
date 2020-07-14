@@ -3,6 +3,7 @@
 Analyze and filterTD1 and TD3 from text recognized in live capture, building evidence over time.
 Blazing fast less than a second
 Using Apple Vision api, so u dont need to download another module.
+Getting best result from matched 10 frames
 
 p.s. I needed it and when I check other package good and fast ones trying to charge you,
 I deciced to code by my self, its my first iOS project, took my day but try it and it really worth.
